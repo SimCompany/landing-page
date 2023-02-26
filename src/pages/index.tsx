@@ -131,7 +131,7 @@ export default function Index() {
         <ButtonChakra maxW='500px'>Garantir o meu agora!</ButtonChakra>
       </Flex>
 
-      <Box id='bg-img-3' pb='80px' bgImage={bgGrenn.src} >
+      <Box id='bg-img-3' pb='80px' style={{ backgroundImage:`url('${bgGrenn.src}')`}} >
         <Text as='h2' textAlign='center' py='40px' fontSize='40px' color='white'>E QUEM JÁ ADQUIRIU ? O QUE DIZEM?</Text>
 
         <Splide options={{
