@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+@font-face {
+  font-family: "steelfish";
+  src: url('../font/steelfish.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#bg-img-1{
+  background-image: url("../img/cap-bg-01.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#bg-img-2{
+  background-image: url("../img/cap-bg-02.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#bg-img-3{
+  background-image: url("../img/cap-bg-02.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+h1, h2, h3 {
+  font-family: "steelfish", sans-serif;
+}
+
+@media (max-width: 768px){
+
+  
+#bg-img-1{
+  background-image: url("../img/cap-bg-02.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+}
