@@ -7,6 +7,7 @@ import TableLine from '../components/tableLine'
 import phone from './../img/multiplata.png'
 import TableIMG from './../img/tabela.png'
 import func from './../img/funcao-02.png'
+import bgGrenn from './../img/cap-bg-02.jpg'
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
@@ -33,7 +34,7 @@ export default function Index() {
               gridTemplateRows='1fr 1fr'
               columnGap='20px'
               rowGap='10px'
-              my='10px'
+              my={{ base: '20px', sm: '40px' }}
             >
               <ChakraInput placeholder='Nome' type='text' />
               <ChakraInput placeholder='Numero' type='text' />
@@ -74,7 +75,7 @@ export default function Index() {
               colaboração mais confiável do mundo
             </Text>
 
-            <ButtonChakra>
+            <ButtonChakra w='80%'>
               Simular para empresa
             </ButtonChakra>
           </Box>
@@ -130,7 +131,7 @@ export default function Index() {
         <ButtonChakra maxW='500px'>Garantir o meu agora!</ButtonChakra>
       </Flex>
 
-      <Box id='bg-img-3' pb='80px'>
+      <Box id='bg-img-3' pb='80px' bgImage={bgGrenn.src} >
         <Text as='h2' textAlign='center' py='40px' fontSize='40px' color='white'>E QUEM JÁ ADQUIRIU ? O QUE DIZEM?</Text>
 
         <Splide options={{
@@ -212,12 +213,11 @@ export default function Index() {
 
             <Text my='8' color='white'>Aproveite e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 3 ramais, faça sua simulação agora!</Text>
             <Grid
-              my={{ base: '20px', sm: '0px' }}
+              my={{ base: '20px', sm: '20px' }}
               gridTemplateColumns={{ base: '1fr', sm: '1fr 1fr' }}
-              gridTemplateRows='1fr 1fr'
-              columnGap='20px'
               rowGap='10px'
-            >
+              gridTemplateRows='1fr 1fr'
+              columnGap='20px'>
               <ChakraInput placeholder='Nome' type='text' />
               <ChakraInput placeholder='Numero' type='text' />
               <ChakraInput placeholder='Quantidade de ramais' type='number' />
