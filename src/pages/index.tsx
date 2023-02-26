@@ -8,6 +8,7 @@ import phone from './../img/multiplata.png'
 import TableIMG from './../img/tabela.png'
 import func from './../img/funcao-02.png'
 import bgGrenn from './../img/cap-bg-02.jpg'
+import bgImg from './../img/cap-bg-01.jpg'
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
@@ -18,7 +19,7 @@ export default function Index() {
   return (
     <Box as='main'>
 
-      <Box id='bg-img-1'>
+      <Box id='bg-img-1' style={{ backgroundImage:`url('${bgImg.src}')`}}>
 
         <Grid py='100px' gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box>
@@ -55,7 +56,7 @@ export default function Index() {
       </Box>
 
 
-      <Box id='bg-img-2'>
+      <Box id='bg-img-2' style={{ backgroundImage:`url('${bgGrenn.src}')`}}>
         <Grid py='100px' gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} columnGap='30px' maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box alignSelf='center'>
             <Image src={phone} alt='multi plataforma' />
@@ -95,7 +96,7 @@ export default function Index() {
         <ButtonChakra mb='40px' maxW='500px'>Simular custo grátis</ButtonChakra>
       </Flex>
 
-      <Box id='bg-img-3' py='50px'>
+      <Box id='bg-img-3' style={{ backgroundImage:`url('${bgGrenn.src}')`}} py='50px'>
         <Grid py='100px' gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box>
             <Image src={func} alt='call-center' />
