@@ -1,4 +1,4 @@
-import { Box, Grid, Text, Input, Checkbox, Button, Table, Tr, Th, Flex, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, AspectRatio } from '@chakra-ui/react'
+import { Box, Grid, Text, Input, Checkbox, Button, Table, Tr, Th, Flex, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, AspectRatio, Radio, Stack, HStack } from '@chakra-ui/react'
 import Image from 'next/image'
 import ButtonChakra from '../components/button'
 import ChakraInput from '../components/input'
@@ -26,16 +26,16 @@ export default function Index() {
 
 
 
-  useEffect(() => {
-    setOpen(true)
-  }, [])
+  // useEffect(() => {
+  //   setOpen(true)
+  // }, [])
 
   return (
     <Box as='main'>
 
       <Box id='bg-img-1' style={{ backgroundImage: `url('${bgImg.src}')` }}>
 
-        <Grid py={{base:'65px', md:'100px'}} gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
+        <Grid py={{ base: '65px', md: '100px' }} gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box>
             <Text as='h1' fontSize='45px' lineHeight='52px'>
               <Text as='span' color='white'>O MELHOR SISTEMA DE TELEFONIA </Text>
@@ -56,8 +56,12 @@ export default function Index() {
               <ChakraInput placeholder='Quantidade de ramais' type='number' />
               <ChakraInput placeholder='email' type='email' />
             </Grid>
-            <Checkbox my='10' colorScheme='red' iconColor='white'>Concordo em permitir que a Sim Company tenha acesso aos meus dados para me
-              responder com propostas promocionais referente ao meu pedido.</Checkbox>
+            <HStack>
+              <input style={{ marginTop: '-20px' }} type='checkbox' required />
+              <Text py='4' color='white'>
+                Concordo em permitir que a Sim Company tenha acesso aos meus dados para me responder com propostas promocionais referente ao meu pedido.
+              </Text>
+            </HStack>
 
             <ButtonChakra>Simular meu PABX</ButtonChakra>
           </Box>
@@ -66,7 +70,7 @@ export default function Index() {
       </Box>
 
       <Box>
-        <Text as='h2' fontSize={40} bgColor='#1d253a' color='white' py='30' textAlign='center'>SIM COMPANY E GOTO TENHA O MELHOR SUPORTE EM TELEFONIA</Text>
+        <Text as='h2' fontSize={40} bgColor='#1d253a' color='white' py='30' textAlign='center'>SIM COMPANY E GOTO TEM O MELHOR SUPORTE EM TELEFONIA</Text>
       </Box>
 
 
@@ -140,13 +144,13 @@ export default function Index() {
       <Flex px='5%' bgColor='#1d253a' justifyContent='center' alignItems='center' flexDirection='column' pb='55px'>
         <Text as='h2' fontSize='55px' color='white' textAlign='center' mt='80px'>MUITO ALEM DE UM SIMPLES CALLCENTER</Text>
         {/* <Box as='h1' mb={{ base: '40px', md: '0px' }}> */}
-          <AspectRatio w='100%' maxW={{base:'320px', md:'560px'}} h={{base:'200px', md:'400px'}} ratio={1}>
-            <iframe
-              title='sim company'
-              src='https://www.youtube.com/embed/AeYqEx5NmCE'
-              allowFullScreen
-            />
-          </AspectRatio>
+        <AspectRatio w='100%' maxW={{ base: '320px', md: '560px' }} h={{ base: '200px', md: '400px' }} ratio={1}>
+          <iframe
+            title='sim company'
+            src='https://www.youtube.com/embed/AeYqEx5NmCE'
+            allowFullScreen
+          />
+        </AspectRatio>
         {/* </Box> */}
         <Text as='h2' fontSize={{ base: '35px', sm: '45px' }} color='white' textAlign='center' mt='30px'>Realize uma simulação e garanta seu aparelho IP grátis</Text>
         <ButtonChakra maxW='500px'>Garantir o meu agora!</ButtonChakra>
@@ -244,8 +248,12 @@ export default function Index() {
               <ChakraInput placeholder='Quantidade de ramais' type='number' />
               <ChakraInput placeholder='email' type='email' />
             </Grid>
-            <Checkbox my='10' colorScheme='red' iconColor='white' color='white'>Concordo em permitir que a Sim Company tenha acesso aos meus dados para me
-              responder com propostas promocionais referente ao meu pedido.</Checkbox>
+            <HStack>
+              <input style={{ marginTop: '-20px' }} type='checkbox' required/>
+              <Text py='4' color='white'>
+                Concordo em permitir que a Sim Company tenha acesso aos meus dados para me responder com propostas promocionais referente ao meu pedido.
+              </Text>
+            </HStack>
 
             <ButtonChakra>Simular meu PABX</ButtonChakra>
           </Box>
