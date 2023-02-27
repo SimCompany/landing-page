@@ -14,11 +14,20 @@ import call from './../img/renomed.png'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css';
-import { useEffect, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
+import ZapComponent from '../components/zap'
+import axios from 'axios'
+import Link from 'next/link'
+import Router from 'next/router'
 
 export default function Index() {
   const [open, setOpen] = useState(false)
   const [close, setClose] = useState<any>(false)
+
+  const [name, setName] = useState<String>()
+  const [number, setNumber] = useState<Number>()
+  const [branches, setBranches] = useState<Number>()
+  const [email, setEmail] = useState<String>()
 
   function onClose() {
     setOpen(false)
@@ -30,13 +39,32 @@ export default function Index() {
   //   setOpen(true)
   // }, [])
 
+
+  async function handleForm(e: FormEvent) {
+
+    e.preventDefault()
+    const data = {
+      emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
+      title: 'Captação de leads por campanha Simcompany',
+      domain: 'camp.simcompany.com.br',
+      name,
+      phone: number,
+      branches,
+      email
+    }
+
+    await axios.post(`https://main-form.herokuapp.com/ticonnected`, data)
+
+    await Router.push('/obrigado')
+  }
+
   return (
     <Box as='main'>
 
       <Box id='bg-img-1' style={{ backgroundImage: `url('${bgImg.src}')` }}>
 
         <Grid py={{ base: '65px', md: '100px' }} gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
-          <Box>
+          <Box id='form' as='form' onSubmit={handleForm}>
             <Text as='h1' fontSize='45px' lineHeight='52px'>
               <Text as='span' color='white'>O MELHOR SISTEMA DE TELEFONIA </Text>
               EMPRESARIAL DO MERCADO ESTÁ AQUI! PABX EM NUVEM COM
@@ -51,19 +79,19 @@ export default function Index() {
               rowGap='10px'
               my={{ base: '10px', sm: '20px' }}
             >
-              <ChakraInput placeholder='Nome' type='text' />
-              <ChakraInput placeholder='Numero' type='text' />
-              <ChakraInput placeholder='Quantidade de ramais' type='number' />
-              <ChakraInput placeholder='email' type='email' />
+              <ChakraInput placeholder='Nome' type='text' onChange={(e) => { setName(e.target.value) }} />
+              <ChakraInput placeholder='Numero' type='text' onChange={(e) => { setNumber(Number(e.target.value)) }} />
+              <ChakraInput placeholder='Quantidade de ramais' type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
+              <ChakraInput placeholder='email' type='email' onChange={(e) => { setEmail(e.target.value) }} />
             </Grid>
             <HStack>
-              <input style={{ marginTop: '-20px' }} type='checkbox' required />
-              <Text py='4' color='white'>
+              <input style={{ marginTop: '-24px' }} type='checkbox' required />
+              <Text py='4'>
                 Concordo em permitir que a Sim Company tenha acesso aos meus dados para me responder com propostas promocionais referente ao meu pedido.
               </Text>
             </HStack>
 
-            <ButtonChakra>Simular meu PABX</ButtonChakra>
+            <ButtonChakra type='submit'>Simular meu PABX</ButtonChakra>
           </Box>
         </Grid>
 
@@ -111,7 +139,9 @@ export default function Index() {
           unificada e descomplicada, sem requerer novos investimentos em infraestrutura e se adequando a quaisquer dispositivos e ambientes de trabalho.
         </Text>
 
-        <ButtonChakra mb='40px' maxW='500px'>Simular custo grátis</ButtonChakra>
+        <Link href='/?couter=#form'>
+          <ButtonChakra mb='40px' maxW='500px'>Simular custo grátis</ButtonChakra>
+        </Link>
       </Flex>
 
       <Box id='bg-img-3' style={{ backgroundImage: `url('${bgGrenn.src}')` }} py='50px'>
@@ -143,7 +173,6 @@ export default function Index() {
 
       <Flex px='5%' bgColor='#1d253a' justifyContent='center' alignItems='center' flexDirection='column' pb='55px'>
         <Text as='h2' fontSize='55px' color='white' textAlign='center' mt='80px'>MUITO ALEM DE UM SIMPLES CALLCENTER</Text>
-        {/* <Box as='h1' mb={{ base: '40px', md: '0px' }}> */}
         <AspectRatio w='100%' maxW={{ base: '320px', md: '560px' }} h={{ base: '200px', md: '400px' }} ratio={1}>
           <iframe
             title='sim company'
@@ -151,9 +180,10 @@ export default function Index() {
             allowFullScreen
           />
         </AspectRatio>
-        {/* </Box> */}
         <Text as='h2' fontSize={{ base: '35px', sm: '45px' }} color='white' textAlign='center' mt='30px'>Realize uma simulação e garanta seu aparelho IP grátis</Text>
-        <ButtonChakra maxW='500px'>Garantir o meu agora!</ButtonChakra>
+        <Link href='/?couter=#form' style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <ButtonChakra maxW='500px' w='100%'>Garantir o meu agora!</ButtonChakra>
+        </Link>
       </Flex>
 
       <Box id='bg-img-3' pb='80px' style={{ backgroundImage: `url('${bgGrenn.src}')` }} >
@@ -243,13 +273,13 @@ export default function Index() {
               rowGap='10px'
               gridTemplateRows='1fr 1fr'
               columnGap='20px'>
-              <ChakraInput placeholder='Nome' type='text' />
-              <ChakraInput placeholder='Numero' type='text' />
-              <ChakraInput placeholder='Quantidade de ramais' type='number' />
-              <ChakraInput placeholder='email' type='email' />
+              <ChakraInput placeholder='Nome' type='text' onChange={(e) => { setName(e.target.value) }} />
+              <ChakraInput placeholder='Numero' type='text' onChange={(e) => { setNumber(Number(e.target.value)) }} />
+              <ChakraInput placeholder='Quantidade de ramais' type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
+              <ChakraInput placeholder='email' type='email' onChange={(e) => { setEmail(e.target.value) }} />
             </Grid>
             <HStack>
-              <input style={{ marginTop: '-20px' }} type='checkbox' required/>
+              <input style={{ marginTop: '-20px' }} type='checkbox' required />
               <Text py='4' color='white'>
                 Concordo em permitir que a Sim Company tenha acesso aos meus dados para me responder com propostas promocionais referente ao meu pedido.
               </Text>
@@ -259,6 +289,8 @@ export default function Index() {
           </Box>
         </Grid>
       </Box>
+
+      <ZapComponent />
 
 
       <Drawer placement='bottom' isOpen={open} onClose={close}>
