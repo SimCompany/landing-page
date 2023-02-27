@@ -26,9 +26,9 @@ export default function Index() {
 
 
 
-  // useEffect(() => {
-  //   setOpen(true)
-  // }, [])
+  useEffect(() => {
+    setOpen(true)
+  }, [])
 
   return (
     <Box as='main'>
@@ -253,7 +253,7 @@ export default function Index() {
       </Box>
 
 
-      <Drawer placement='bottom' isOpen={open}>
+      <Drawer placement='bottom' isOpen={open} onClose={close}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerBody display='flex' justifyContent='space-between' alignItems='center' px='5%' py='10px'>
