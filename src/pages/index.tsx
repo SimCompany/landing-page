@@ -1,4 +1,4 @@
-import { Box, Grid, Text, Input, Checkbox, Button, Table, Tr, Th, Flex } from '@chakra-ui/react'
+import { Box, Grid, Text, Input, Checkbox, Button, Table, Tr, Th, Flex, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, AspectRatio } from '@chakra-ui/react'
 import Image from 'next/image'
 import ButtonChakra from '../components/button'
 import ChakraInput from '../components/input'
@@ -9,17 +9,31 @@ import TableIMG from './../img/tabela.png'
 import func from './../img/funcao-02.png'
 import bgGrenn from './../img/cap-bg-02.jpg'
 import bgImg from './../img/cap-bg-01.jpg'
+import call from './../img/renomed.png'
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css';
+import { useEffect, useState } from 'react'
 
 export default function Index() {
+  const [open, setOpen] = useState(false)
+  const [close, setClose] = useState<any>(false)
+
+  function onClose() {
+    setOpen(false)
+  }
+
+
+
+  useEffect(() => {
+    setOpen(true)
+  }, [])
 
   return (
     <Box as='main'>
 
-      <Box id='bg-img-1' style={{ backgroundImage:`url('${bgImg.src}')`}}>
+      <Box id='bg-img-1' style={{ backgroundImage: `url('${bgImg.src}')` }}>
 
         <Grid py='100px' gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box>
@@ -52,11 +66,11 @@ export default function Index() {
       </Box>
 
       <Box>
-        <Text as='h2' fontSize={40} bgColor='#1d253a' color='white' py='30' textAlign='center'>SIM COMPANY E GOTO TENHA O MELHOR SUPORTE EM</Text>
+        <Text as='h2' fontSize={40} bgColor='#1d253a' color='white' py='30' textAlign='center'>SIM COMPANY E GOTO TENHA O MELHOR SUPORTE EM TELEFONIA</Text>
       </Box>
 
 
-      <Box id='bg-img-2' style={{ backgroundImage:`url('${bgGrenn.src}')`}}>
+      <Box id='bg-img-2' style={{ backgroundImage: `url('${bgGrenn.src}')` }}>
         <Grid py='100px' gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} columnGap='30px' maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box alignSelf='center'>
             <Image src={phone} alt='multi plataforma' />
@@ -96,7 +110,7 @@ export default function Index() {
         <ButtonChakra mb='40px' maxW='500px'>Simular custo grátis</ButtonChakra>
       </Flex>
 
-      <Box id='bg-img-3' style={{ backgroundImage:`url('${bgGrenn.src}')`}} py='50px'>
+      <Box id='bg-img-3' style={{ backgroundImage: `url('${bgGrenn.src}')` }} py='50px'>
         <Grid py='100px' gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box>
             <Image src={func} alt='call-center' />
@@ -125,14 +139,20 @@ export default function Index() {
 
       <Flex bgColor='#1d253a' justifyContent='center' alignItems='center' flexDirection='column' pb='55px'>
         <Text as='h2' fontSize='55px' color='white' textAlign='center' mt='80px'>MUITO ALEM DE UM SIMPLES CALLCENTER</Text>
-        <Box as='h1' mb={{ base: '40px', md: '0px' }} h='400px' width={{ base: '80%', md: '400px' }} bgColor='black' color='white' display='flex' justifyContent='center' alignItems='center'>
-          VIDEO
+        <Box as='h1' mb={{ base: '40px', md: '0px' }}>
+          <AspectRatio maxW='560px' h='200px' ratio={1}>
+            <iframe
+              title='sim company'
+              src='https://youtu.be/AeYqEx5NmCE'
+              allowFullScreen
+            />
+          </AspectRatio>
         </Box>
         <Text as='h2' fontSize={{ base: '35px', sm: '45px' }} color='white' textAlign='center' mt='30px'>Realize uma simulação e garanta seu aparelho IP grátis</Text>
         <ButtonChakra maxW='500px'>Garantir o meu agora!</ButtonChakra>
       </Flex>
 
-      <Box id='bg-img-3' pb='80px' style={{ backgroundImage:`url('${bgGrenn.src}')`}} >
+      <Box id='bg-img-3' pb='80px' style={{ backgroundImage: `url('${bgGrenn.src}')` }} >
         <Text as='h2' textAlign='center' py='40px' fontSize='40px' color='white'>E QUEM JÁ ADQUIRIU ? O QUE DIZEM?</Text>
 
         <Splide options={{
@@ -140,7 +160,7 @@ export default function Index() {
           type: 'loop'
         }}>
           <SplideSlide style={{ display: 'flex', alignContent: 'center' }}>
-            <Flex bgColor='white' mx='15%' px={{ base: '25px', sm: '50px' }} py={{base: '0px', sm:'50px'}} borderRadius={10} justifyContent='center' flexDirection='column'>
+            <Flex bgColor='white' mx='15%' px={{ base: '25px', sm: '50px' }} py={{ base: '0px', sm: '50px' }} borderRadius={10} justifyContent='center' flexDirection='column'>
               <Text fontSize={{ base: '14px', md: '16px' }}>
                 Para nós da Quick Comex a parceria de temos com Goto tem
                 sido uma maravilha, visto que são muito prestativos em ágeis quanto
@@ -157,7 +177,7 @@ export default function Index() {
 
 
           <SplideSlide style={{ display: 'flex', alignContent: 'center' }}>
-            <Flex bgColor='white' mx='15%' px={{ base: '25px', sm: '50px' }} py={{base: '0px', sm:'50px'}} borderRadius={10} justifyContent='center' flexDirection='column'>
+            <Flex bgColor='white' mx='15%' px={{ base: '25px', sm: '50px' }} py={{ base: '0px', sm: '50px' }} borderRadius={10} justifyContent='center' flexDirection='column'>
               <Text fontSize={{ base: '14px', md: '16px' }}>
                 Contratamos mais de 60 linhas voip para modernizar nosso sistema
                 que era analógico.
@@ -182,7 +202,7 @@ export default function Index() {
           </SplideSlide>
 
           <SplideSlide style={{ display: 'flex', alignContent: 'center' }}>
-            <Flex bgColor='white' mx='15%' px={{ base: '25px', sm: '50px' }} py={{base: '0px', sm:'50px'}} borderRadius={10} justifyContent='center' flexDirection='column'>
+            <Flex bgColor='white' mx='15%' px={{ base: '25px', sm: '50px' }} py={{ base: '0px', sm: '50px' }} borderRadius={10} justifyContent='center' flexDirection='column'>
               <Text fontSize={{ base: '14px', md: '16px' }}>
                 Os produtos da GoTo tem surpreendido no quesito, facilidade e economia.
                 Até o momento tem sido uma experiência maravilhosa, tudo muito prático
@@ -202,11 +222,11 @@ export default function Index() {
 
       <Box bgColor='#1d253a'>
         <Grid py='100px' gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
-          <Box as='h1' mb={{ base: '40px', md: '0px' }} h='400px' width={{ base: '100%', md: '600px' }} bgColor='black' color='white' display='flex' justifyContent='center' alignItems='center'>
-            IMAGEM
+          <Box >
+            <Image src={call} alt='faça sua consulta agora' />
           </Box>
 
-          <Box alignContent='center'>
+          <Box alignContent='center' alignSelf='center'>
             <Text as='h1' fontSize={{ base: '35px', sm: '55px' }} textAlign='center'>
               <Text color='#9BCA00'>NÃO PERCA ESSA OPORTUNIDADE E FAÇA SUA</Text>
               <Text as='span' color='white'> AVALIAÇÃO GRATUITA!</Text>
@@ -232,6 +252,15 @@ export default function Index() {
         </Grid>
       </Box>
 
+
+      <Drawer placement='bottom' isOpen={open} onClose={close}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerBody display='flex' justifyContent='space-between' alignItems='center' px='5%' py='10px'>
+            <p>Ao permancer nessa página você estará concordando com nossa política de privacidade e termos de uso</p> <Button py='14px' px='40px' borderRadius='10' colorScheme='green' onClick={onClose}>Concordo</Button>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   )
 }
