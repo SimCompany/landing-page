@@ -45,8 +45,7 @@ export default function Index() {
 
     e.preventDefault()
     const data = {
-      // emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
-      emailTo: 'matteus.isaque28@gmail.com',
+      emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
       title: 'Captação de leads por campanha Simcompany',
       domain: 'https://camp.simcompany.com.br',
       companyName,
@@ -56,13 +55,10 @@ export default function Index() {
       email
     }
 
-    await axios.post(`${process.env.NEXT_API_FORM}/ticonnected`, data)
+    await axios.post(`https://main-form.herokuapp.com/ticonnected`, data)
 
     await Router.push('/obrigado')
   }
-
-
-  
 
   return (
     <Box as='main'>
