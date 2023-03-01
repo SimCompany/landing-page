@@ -66,12 +66,13 @@ export default function Index() {
         <Grid py={{ base: '65px', md: '100px' }} gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box id='form' as='form' onSubmit={handleForm}>
             <Text as='h1' fontSize='45px' lineHeight='52px'>
-              <Text as='span' color='white'>O MELHOR SISTEMA DE TELEFONIA </Text>
-              EMPRESARIAL DO MERCADO ESTÁ AQUI! PABX EM NUVEM COM
-              <Text as='span' color='white'> AVALIAÇÃO GRATUITA!</Text>
+              O SISTEMA
+              <Text as='span' color='white'> PABX EM NUVEM </Text>
+              PERFEITO PARA O SEU NEGÓCIO, CONTRATE E GANHE
+              <Text as='span' color='white'> APARELHO IP GRÁTIS! É POR TEMPO LIMITADO</Text>
             </Text>
 
-            <Text my='8'>Aproveite e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 3 ramais, faça sua simulação agora!</Text>
+            <Text my='8'>Aproveite e ganhe os benefícios do sistema GoTo Conected e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 5 ramais, promoção <Text as='span' color='white'> limitada até o fim de marçoe. </Text> Não perca essa oportunidade, faça sua simulação <Text as='span' color='white'>grátis e garanta o seu</Text></Text>
             <Grid
               gridTemplateColumns='1fr 1fr'
               gridTemplateRows='1fr 1fr'
@@ -98,7 +99,7 @@ export default function Index() {
       </Box>
 
       <Box>
-        <Text as='h2' fontSize={40} bgColor='#1d253a' color='white' py='30' textAlign='center'>SIM COMPANY E GOTO TEM O MELHOR SUPORTE EM TELEFONIA</Text>
+        <Text as='h2' fontSize={40} bgColor='#1d253a' color='white' py='30' textAlign='center'>SIM COMPANY E GOTO, SUA EMPRESA MERECE O MELHOR SUPORTE E ATENDIMENTO</Text>
       </Box>
 
 
@@ -108,18 +109,15 @@ export default function Index() {
             <Image src={phone} alt='multi plataforma' />
           </Box>
 
-          <Box display='flex' justifyContent='center' alignItems='center' flexDirection='column'>
-            <Text as='h2' fontSize='40px' color='white'>Veja porque temos a melhor proposta de telefonia em nuvem</Text>
-            <Text>Seus colaboradores podem se comunicar via <Text color='white' as='span'>web, ligação de voz Pabx Virtual,
-              chat, compartilhar tela, videoconferência, conversar e colaborar
-              com tranquilidade usando um único aplicativo,</Text> aumentando a produtividade e
-              alta performance em comunicação.</Text>
+          <Box display='flex' justifyContent='center' flexDirection='column'>
+            <Text as='h2' fontSize='40px' color='white'>UM SISTEMA COMPLETO REUNIDO EM UMA SÓ PLATAFORMA</Text>
+            <Text>Você pode participar de reuniões ou chamadas pelo telefone, computador ou celular usando o aplicativo do <Text color='white' as='span'>GoTo Connect</Text> ou diretamente pelo navegador, O GoTo Connect te acompanha onde você estiver.</Text>
 
             <Text mt='18'>
-              Uma solução fácil de gerenciar por uma mensalidade fixa e garantindo seu
-              orçamento anual, sem investir em equipamentos e hardware, você paga apenas
-              como serviço. Tudo desenvolvido pela LogMeIn - GoTo, a marca de soluções de
-              colaboração mais confiável do mundo
+              Com <Text color='white' as='span'> mais de 100 funcionalidades inclusas, </Text> você, sua equipe e seus clientes terão uma comunicação mais rápida e fluída, garantindo maior engajamento e melhores resultados na comunicação. Uma solução fácil de gerenciar, <Text color='white' as='span'>sem variações em sua fatura</Text> e sem necessidade de investir em equipamentos caríssimos, venha para a solução que te trará liberdade, segurança e credibbilidade.
+            </Text>
+            <Text mt='18'>
+              GoTo Connect é o software de telefonia mais <Text color='white' as='span'>confiável do mundo.</Text>
             </Text>
 
             <ButtonChakra w='80%'>
@@ -150,22 +148,10 @@ export default function Index() {
             <Image src={func} alt='call-center' />
           </Box>
           <Box alignSelf='center'>
-            <Text as='h2' fontSize='55px' color='white'>MUITO ALEM DE UM SIMPLES CALLCENTER</Text>
+            <Text as='h2' fontSize='55px' color='white'>UM SISTEMA DE TELEFONIA VIRTUAL QUE SE ADAPTA A VOCÊ</Text>
 
             <Text color='white' fontSize='22px' fontWeight='500'>Grave todas as ligações de sua empresa:</Text>
-            <Text>Mais segurança e qualidade de atendimento. Saiba o que foi falado ao seu cliente e
-              monitore o desenvolvimento de sua equipe. A gravação da ligação é um dos recursos
-              presentes em todos os planos e você ganha sem ter que pagar nada a mais por isso!</Text>
-
-            <Text mt='10px' color='white' fontSize='22px' fontWeight='500'>Acesso remoto:</Text>
-            <Text>Comece a cortar custos desnecessários em sua empresa, atualize a maneira que sua
-              empresa se comunica, Gerenciamento de ramais com apenas 1 número, gravação em
-              nuvem e suporte para videoconferência integrada aos melhores apps de chamada.</Text>
-
-            <Text mt='10px' color='white' fontSize='22px' fontWeight='500'>Roteamento de chamadas:</Text>
-            <Text>Personalize os fluxos de chamada em minutos com um Editor de plano de discagem
-              de arrastar e soltar. Crie atendentes automatizados e crie agendamentos e regras
-              para o horário de funcionamento.</Text>
+            <Text>Adiciona números de ligações gratuitas ou faça a portabilidade dos seus números, ganhe ramais ilimitados e crie uma pasta telefônica principal com estrutura de árvore para toda a empresa, você ainda pode integrar aos seus aplicativos favoritos, como Salesforce e Slack.</Text>
 
           </Box>
         </Grid>
