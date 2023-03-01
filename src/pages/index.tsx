@@ -56,7 +56,7 @@ export default function Index() {
       email
     }
 
-    await axios.post(`https://main-form.herokuapp.com/ticonnected`, data)
+    await axios.post(`${process.env.NEXT_API_FORM}/ticonnected`, data)
 
     await Router.push('/obrigado')
   }
