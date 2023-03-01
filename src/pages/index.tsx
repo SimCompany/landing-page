@@ -1,4 +1,4 @@
-import { Box, Grid, Text, Input, Checkbox, Button, Table, Tr, Th, Flex, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, AspectRatio, Radio, Stack, HStack } from '@chakra-ui/react'
+import { Box, Grid, Text, Input, Checkbox, Button, Table, Tr, Th, Flex, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, AspectRatio, Radio, Stack, HStack, InputGroup } from '@chakra-ui/react'
 import Image from 'next/image'
 import ButtonChakra from '../components/button'
 import ChakraInput from '../components/input'
@@ -28,6 +28,7 @@ export default function Index() {
   const [number, setNumber] = useState<Number>()
   const [branches, setBranches] = useState<Number>()
   const [email, setEmail] = useState<String>()
+  const [companyName, setCompanyName] = useState<String>()
 
   function onClose() {
     setOpen(false)
@@ -44,9 +45,11 @@ export default function Index() {
 
     e.preventDefault()
     const data = {
-      emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
+      // emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
+      emailTo: 'matteus.isaque28@gmail.com',
       title: 'Captação de leads por campanha Simcompany',
-      domain: 'camp.simcompany.com.br',
+      domain: 'https://camp.simcompany.com.br',
+      companyName,
       name,
       phone: number,
       branches,
@@ -73,18 +76,19 @@ export default function Index() {
             </Text>
 
             <Text my='8'>Aproveite e ganhe os benefícios do sistema GoTo Conected e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 5 ramais, promoção <Text as='span' color='white'> limitada até o fim de marçoe. </Text> Não perca essa oportunidade, faça sua simulação <Text as='span' color='white'>grátis e garanta o seu</Text></Text>
-            <Grid
-              gridTemplateColumns='1fr 1fr'
-              gridTemplateRows='1fr 1fr'
-              columnGap='20px'
-              rowGap='10px'
-              my={{ base: '10px', sm: '20px' }}
-            >
-              <ChakraInput placeholder='Nome' type='text' onChange={(e) => { setName(e.target.value) }} />
-              <ChakraInput placeholder='Numero' type='text' onChange={(e) => { setNumber(Number(e.target.value)) }} />
-              <ChakraInput placeholder='Quantidade de ramais' type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
-              <ChakraInput placeholder='email' type='email' onChange={(e) => { setEmail(e.target.value) }} />
-            </Grid>
+            <Stack my='8px'>
+              <Stack direction={{base:'column', md:'row'}}>
+                <ChakraInput placeholder='Nome da empresa *' type='text' onChange={(e) => { setCompanyName(e.target.value) }} />
+              </Stack>
+              <Stack direction={{base:'column', md:'row'}}>
+                <ChakraInput placeholder='Nome' type='text' onChange={(e) => { setName(e.target.value) }} />
+                <ChakraInput placeholder='Numero' type='text' onChange={(e) => { setNumber(Number(e.target.value)) }} />
+              </Stack>
+              <Stack direction={{base:'column', md:'row'}}>
+                <ChakraInput placeholder='Quantidade de ramais' type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
+                <ChakraInput placeholder='Email *' type='email' onChange={(e) => { setEmail(e.target.value) }} />
+              </Stack>
+            </Stack>
             <HStack>
               <input style={{ marginTop: '-24px' }} type='checkbox' required />
               <Text py='4'>
@@ -120,9 +124,12 @@ export default function Index() {
               GoTo Connect é o software de telefonia mais <Text color='white' as='span'>confiável do mundo.</Text>
             </Text>
 
-            <ButtonChakra w='80%'>
-              Simular para empresa
-            </ButtonChakra>
+            <Link href='/?couter=#form'>
+
+              <ButtonChakra w='80%'>
+                Simular para empresa
+              </ButtonChakra>
+            </Link>
           </Box>
         </Grid>
       </Box>
@@ -137,8 +144,8 @@ export default function Index() {
           unificada e descomplicada, sem requerer novos investimentos em infraestrutura e se adequando a quaisquer dispositivos e ambientes de trabalho.
         </Text>
 
-        <Link href='/?couter=#form'>
-          <ButtonChakra mb='40px' maxW='500px'>Simular custo grátis</ButtonChakra>
+        <Link href='/?couter=#form' style={{ width: '100%', maxWidth: '700px', margin: '0 auto' }}>
+          <ButtonChakra mb='40px' maxW='700px'>Simular custo grátis</ButtonChakra>
         </Link>
       </Flex>
 
@@ -253,17 +260,19 @@ export default function Index() {
             </Text>
 
             <Text my='8' color='white'>Aproveite e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 3 ramais, faça sua simulação agora!</Text>
-            <Grid
-              my={{ base: '20px', sm: '20px' }}
-              gridTemplateColumns={{ base: '1fr', sm: '1fr 1fr' }}
-              rowGap='10px'
-              gridTemplateRows='1fr 1fr'
-              columnGap='20px'>
-              <ChakraInput placeholder='Nome' type='text' onChange={(e) => { setName(e.target.value) }} />
-              <ChakraInput placeholder='Numero' type='text' onChange={(e) => { setNumber(Number(e.target.value)) }} />
-              <ChakraInput placeholder='Quantidade de ramais' type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
-              <ChakraInput placeholder='email' type='email' onChange={(e) => { setEmail(e.target.value) }} />
-            </Grid>
+            <Stack my='8px'>
+              <Stack direction={{base:'column', md:'row'}}>
+                <ChakraInput placeholder='Nome da empresa *' type='text' onChange={(e) => { setCompanyName(e.target.value) }} />
+              </Stack>
+              <Stack direction={{base:'column', md:'row'}}>
+                <ChakraInput placeholder='Nome' type='text' onChange={(e) => { setName(e.target.value) }} />
+                <ChakraInput placeholder='Numero' type='text' onChange={(e) => { setNumber(Number(e.target.value)) }} />
+              </Stack>
+              <Stack direction={{base:'column', md:'row'}}>
+                <ChakraInput placeholder='Quantidade de ramais' type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
+                <ChakraInput placeholder='Email *' type='email' onChange={(e) => { setEmail(e.target.value) }} />
+              </Stack>
+            </Stack>
             <HStack>
               <input style={{ marginTop: '-20px' }} type='checkbox' required />
               <Text py='4' color='white'>
