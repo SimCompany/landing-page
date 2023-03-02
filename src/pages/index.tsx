@@ -67,6 +67,9 @@ export default function Index() {
 
         <Grid py={{ base: '65px', md: '100px' }} gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box id='form' as='form' onSubmit={handleForm}>
+            <Text as='h1' fontSize='30px' lineHeight='30px'>
+              TELEFONIA, REUNIÕES E MENSAGENS
+              </Text>
             <Text as='h1' fontSize='45px' lineHeight='52px'>
               O SISTEMA
               <Text as='span' color='white'> PABX EM NUVEM </Text>
@@ -76,14 +79,14 @@ export default function Index() {
 
             <Text my='8'>Aproveite e ganhe os benefícios do sistema GoTo Conected e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 5 ramais, promoção <Text as='span' color='white'> limitada até o fim de marçoe. </Text> Não perca essa oportunidade, faça sua simulação <Text as='span' color='white'>grátis e garanta o seu</Text></Text>
             <Stack my='8px'>
-              <Stack direction={{base:'column', md:'row'}}>
+              <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Nome da empresa *' type='text' onChange={(e) => { setCompanyName(e.target.value) }} />
               </Stack>
-              <Stack direction={{base:'column', md:'row'}}>
+              <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Nome' type='text' onChange={(e) => { setName(e.target.value) }} />
                 <ChakraInput placeholder='Numero' type='text' onChange={(e) => { setNumber(Number(e.target.value)) }} />
               </Stack>
-              <Stack direction={{base:'column', md:'row'}}>
+              <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Quantidade de ramais' type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
                 <ChakraInput placeholder='Email *' type='email' onChange={(e) => { setEmail(e.target.value) }} />
               </Stack>
@@ -260,14 +263,14 @@ export default function Index() {
 
             <Text my='8' color='white'>Aproveite e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 3 ramais, faça sua simulação agora!</Text>
             <Stack my='8px'>
-              <Stack direction={{base:'column', md:'row'}}>
+              <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Nome da empresa *' type='text' onChange={(e) => { setCompanyName(e.target.value) }} />
               </Stack>
-              <Stack direction={{base:'column', md:'row'}}>
+              <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Nome' type='text' onChange={(e) => { setName(e.target.value) }} />
                 <ChakraInput placeholder='Numero' type='text' onChange={(e) => { setNumber(Number(e.target.value)) }} />
               </Stack>
-              <Stack direction={{base:'column', md:'row'}}>
+              <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Quantidade de ramais' type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
                 <ChakraInput placeholder='Email *' type='email' onChange={(e) => { setEmail(e.target.value) }} />
               </Stack>
