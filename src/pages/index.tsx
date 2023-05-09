@@ -10,6 +10,7 @@ import func from './../img/funcao-02.png'
 import bgGrenn from './../img/cap-bg-02.jpg'
 import bgImg from './../img/cap-bg-01.jpg'
 import call from './../img/renomed.png'
+import Install from './../img/install.png'
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
@@ -45,7 +46,8 @@ export default function Index() {
 
     e.preventDefault()
     const data = {
-      emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
+      // emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
+      emailTo: 'matteus.isaque28@gmail.com',
       title: 'Captação de leads por campanha Simcompany',
       domain: 'https://camp.simcompany.com.br',
       companyName,
@@ -69,15 +71,15 @@ export default function Index() {
           <Box id='form' as='form' onSubmit={handleForm}>
             <Text as='h1' fontSize='30px' lineHeight='30px'>
               TELEFONIA, REUNIÕES E MENSAGENS
-              </Text>
+            </Text>
             <Text as='h1' fontSize='45px' lineHeight='52px'>
               O SISTEMA
-              <Text as='span' color='white'> PABX EM NUVEM </Text>
+              <Text as='span' color='white'> PABX EM NUVEM ILIMITADO </Text>
               PERFEITO PARA O SEU NEGÓCIO, CONTRATE E GANHE
               <Text as='span' color='white'> APARELHO IP GRÁTIS! É POR TEMPO LIMITADO</Text>
             </Text>
 
-            <Text my='8'>Aproveite e ganhe os benefícios do sistema GoTo Conected e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 5 ramais, promoção <Text as='span' color='white'> limitada até o fim de marçoe. </Text> Não perca essa oportunidade, faça sua simulação <Text as='span' color='white'>grátis e garanta o seu</Text></Text>
+            <Text my='8'>Aproveite e ganhe os benefícios do sistema GoTo Conected e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 5 ramais, promoção <Text as='span' color='white'> limitada até o fim do mês. </Text> Não perca essa oportunidade, faça sua simulação <Text as='span' color='white'>grátis e garanta o seu.</Text></Text>
             <Stack my='8px'>
               <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Nome da empresa *' type='text' onChange={(e) => { setCompanyName(e.target.value) }} />
@@ -157,29 +159,56 @@ export default function Index() {
             <Image src={func} alt='call-center' />
           </Box>
           <Box alignSelf='center'>
-            <Text as='h2' fontSize='55px' color='white'>UM SISTEMA DE TELEFONIA VIRTUAL QUE SE ADAPTA A VOCÊ</Text>
+            <Text as='h2' fontSize='55px' color='white'>MAIS DE 100 RECURSOS A SUA DISPOSIÇÃO</Text>
 
-            <Text color='white' fontSize='22px' fontWeight='500'>Grave todas as ligações de sua empresa:</Text>
-            <Text>Adiciona números de ligações gratuitas ou faça a portabilidade dos seus números, ganhe ramais ilimitados e crie uma pasta telefônica principal com estrutura de árvore para toda a empresa, você ainda pode integrar aos seus aplicativos favoritos, como Salesforce e Slack.</Text>
+            <Text color='white' fontSize='22px' fontWeight='500'>Telefonia</Text>
+            <Text>Relatórios de ligações e monitoramento; Ferramentas de administração completa; Encaminhamento, filas de chamadas, espera e autoatendimento; Gravação de chamadas (armazenadas no próprio PABX) até 20 semanas.</Text>
 
+            <Text color='white' fontSize='22px' fontWeight='500' mt='20px'>Reuniões</Text>
+            <Text>Até 250 participantes, sem limitador de tempo; 50 Webcans simultâneas; Audioconferências, gravação com link de compartilhamento; Compartilhamento de tela e coorganizadores.</Text>
+
+            <Text color='white' fontSize='22px' fontWeight='500' mt='20px'>Mensagem</Text>
+            <Text>Chat de Equipe e grupos; Compartilhamento de arquivos; Acesso a reunião com apenas 1 clique; Histórico de mensagens.</Text>
+
+            <Text color='white' fontSize='22px' fontWeight='500' mt='20px'>Call Center</Text>
+            <Text>Filas de chamadas ilimitadas; Relatórios e análises, call back; Monitoramento em tempo real de agentes e ligações; Encaminhamento, inteligente de chamadas.</Text>
+
+
+            <Text color='white' mt='20px'>Essas e outras vantagens te aguarda, realize uma simulação agora mesmo.</Text>
+
+          <Link href="/?counter=#form">
+            <ButtonChakra >FAZER SIMULAÇÃO AGORA!</ButtonChakra>
+          </Link>
           </Box>
         </Grid>
       </Box>
 
       <Flex px='5%' bgColor='#1d253a' justifyContent='center' alignItems='center' flexDirection='column' pb='55px'>
         <Text as='h2' fontSize='55px' color='white' textAlign='center' mt='80px'>MUITO ALEM DE UM SIMPLES CALLCENTER</Text>
-        <AspectRatio w='100%' maxW={{ base: '320px', md: '560px' }} h={{ base: '200px', md: '400px' }} ratio={1}>
-          <iframe
-            title='sim company'
-            src='https://www.youtube.com/embed/AeYqEx5NmCE'
-            allowFullScreen
-          />
-        </AspectRatio>
+
+        <Grid gridTemplateColumns={{lg:'1fr 1fr', base:'1fr'}} my='40px' columnGap='20px' >
+
+          <Flex justifyContent='center' alignItems='center' height='100%'>
+            <AspectRatio w='100%' maxW={{ base: '320px', md: '560px' }} h={{ base: '200px', md: '400px' }} ratio={1}>
+              <iframe
+                title='sim company'
+                src='https://www.youtube.com/embed/AeYqEx5NmCE'
+                allowFullScreen
+              />
+            </AspectRatio>
+          </Flex>
+
+          <Box mt={{base:'40px', lg:'0px'}}>
+            <Image src={Install} alt="instalação grátis" />
+          </Box>
+        </Grid>
+
         <Text as='h2' fontSize={{ base: '35px', sm: '45px' }} color='white' textAlign='center' mt='30px'>Realize uma simulação e garanta seu aparelho IP grátis</Text>
         <Link href='/?couter=#form' style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
           <ButtonChakra maxW='500px' w='100%'>Garantir o meu agora!</ButtonChakra>
         </Link>
-      </Flex>
+
+      </Flex >
 
       <Box id='bg-img-3' pb='80px' style={{ backgroundImage: `url('${bgGrenn.src}')` }} >
         <Text as='h2' textAlign='center' py='40px' fontSize='40px' color='white'>E QUEM JÁ ADQUIRIU ? O QUE DIZEM?</Text>
@@ -249,7 +278,8 @@ export default function Index() {
       </Box>
 
 
-      <Box bgColor='#1d253a'>
+
+      <Box bgColor='#1d253a' id="form">
         <Grid py='100px' gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box >
             <Image src={call} alt='faça sua consulta agora' />
@@ -261,7 +291,7 @@ export default function Index() {
               <Text as='span' color='white'> AVALIAÇÃO GRATUITA!</Text>
             </Text>
 
-            <Text my='8' color='white'>Aproveite e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 3 ramais, faça sua simulação agora!</Text>
+            <Text my='8' color='white'>Aproveite e ganhe <Text as='span' color='white'>aparelho IP + instalação grátis </Text> em pedidos a cima de 5 ramais, faça sua simulação agora!</Text>
             <Stack my='8px'>
               <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Nome da empresa *' type='text' onChange={(e) => { setCompanyName(e.target.value) }} />
