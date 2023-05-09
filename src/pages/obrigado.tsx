@@ -1,6 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import ButtonChakra from "../components/button";
 import bgGrenn from './../img/cap-bg-02.jpg'
+import Link from "next/link";
 
 
 
@@ -18,7 +19,9 @@ export default function Obrigado() {
 
     >
       <Text as='h1' fontSize='45px'>OBRIGADO, RETORNAREMOS O CONTATO ASSIM QUE POSSÍVEL</Text>
+      <Link style={{width: '300px'}} href="/">
       <ButtonChakra maxW='400px'>INÍCIO</ButtonChakra>
+      </Link>
     </Box>
   )
 }
