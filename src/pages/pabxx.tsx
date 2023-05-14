@@ -21,8 +21,6 @@ import axios from 'axios'
 import Link from 'next/link'
 import Router from 'next/router'
 
-import IP from './../img/aparelhoip.png'
-
 export default function Index() {
   const [open, setOpen] = useState(false)
   const [close, setClose] = useState<any>(false)
@@ -49,8 +47,9 @@ export default function Index() {
     e.preventDefault()
     const data = {
       emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
+      // emailTo: 'matteus.isaque28@gmail.com',
       title: 'Captação de leads por campanha Simcompany',
-      domain: 'https://camp.simcompany.com.br/pabx',
+      domain: 'https://camp.simcompany.com.br',
       companyName,
       name,
       phone: number,
@@ -70,16 +69,18 @@ export default function Index() {
 
         <Grid py={{ base: '65px', md: '100px' }} gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box id='form' as='form' onSubmit={handleForm}>
-
-            <Box>
-              <Image src={IP} alt="pabx" />
-            </Box>
-            <Text id="h1" as='h1' fontSize='20px' lineHeight='30px' textAlign='center' fontWeight='700'>
+            <Text as='h1' fontSize='30px' lineHeight='30px'>
               TELEFONIA, REUNIÕES E MENSAGENS
             </Text>
+            <Text as='h1' fontSize='45px' lineHeight='52px'>
+              O SISTEMA
+              <Text as='span' color='white'> PABX EM NUVEM ILIMITADO </Text>
+              PERFEITO PARA O SEU NEGÓCIO, CONTRATE E GANHE
+              <Text as='span' color='white'> APARELHO IP GRÁTIS! É POR TEMPO LIMITADO</Text>
+            </Text>
 
-    <Text>Realize uma simulação agora! Tenha acesso a um dos sistemas PABX mais completo do Brasil. Aproveite os benefícios ilimitados e ganhe também aparelho IP grátis em pedidos acima de 5 ramais.</Text>
-              <Stack my='8px'>
+            <Text my='8'>Aproveite e ganhe os benefícios do sistema GoTo Conected e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 5 ramais, promoção <Text as='span' color='white'> limitada até o fim do mês. </Text> Não perca essa oportunidade, faça sua simulação <Text as='span' color='white'>grátis e garanta o seu.</Text></Text>
+            <Stack my='8px'>
               <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Nome da empresa *' type='text' onChange={(e) => { setCompanyName(e.target.value) }} />
               </Stack>
@@ -99,9 +100,7 @@ export default function Index() {
               </Text>
             </HStack>
 
-            <Button type="submit" w='100%' cursor='pointer' bgColor='#ff0000' _hover={{ bgColor: '#c70000', transition: '0.5s' }} transition='0.5s' py='12px' borderRadius='6px' mt='20px' fontWeight='700' fontSize={{ base: '20px', sm: '24px' }} color='#1d253a'>SIMULAR UM PLANO PABX</Button>
-
- 
+            <ButtonChakra type='submit'>Simular meu PABX</ButtonChakra>
           </Box>
         </Grid>
 

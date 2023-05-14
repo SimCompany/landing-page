@@ -21,6 +21,8 @@ import axios from 'axios'
 import Link from 'next/link'
 import Router from 'next/router'
 
+import IP from './../img/aparelhoip.png'
+
 export default function Index() {
   const [open, setOpen] = useState(false)
   const [close, setClose] = useState<any>(false)
@@ -47,9 +49,8 @@ export default function Index() {
     e.preventDefault()
     const data = {
       emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
-      // emailTo: 'matteus.isaque28@gmail.com',
       title: 'Captação de leads por campanha Simcompany',
-      domain: 'https://camp.simcompany.com.br',
+      domain: 'https://camp.simcompany.com.br/pabx',
       companyName,
       name,
       phone: number,
@@ -69,17 +70,16 @@ export default function Index() {
 
         <Grid py={{ base: '65px', md: '100px' }} gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }} maxW='1300px' m={{ base: '0 5%', md: '0 10%', xl: '0 auto' }}>
           <Box id='form' as='form' onSubmit={handleForm}>
-            <Text as='h1' fontSize='30px' lineHeight='30px'>
+            <Text color="white" fontSize={34} fontWeight={700} textAlign='center'>PABX EM NUVEM</Text>
+            <Text color="#1d253a" fontSize={20} fontWeight={600} textAlign='center' mb='8px'>ILIMITADO COM ADICIONAIS</Text>
+            <Box>
+              <Image src={IP} alt="pabx" />
+            </Box>
+            <Text id="h1" as='h1' fontSize='20px' mt='4px' lineHeight='30px' textAlign='center' fontWeight='700'>
               TELEFONIA, REUNIÕES E MENSAGENS
             </Text>
-            <Text as='h1' fontSize='45px' lineHeight='52px'>
-              O SISTEMA
-              <Text as='span' color='white'> PABX EM NUVEM ILIMITADO </Text>
-              PERFEITO PARA O SEU NEGÓCIO, CONTRATE E GANHE
-              <Text as='span' color='white'> APARELHO IP GRÁTIS! É POR TEMPO LIMITADO</Text>
-            </Text>
 
-            <Text my='8'>Aproveite e ganhe os benefícios do sistema GoTo Conected e ganhe <Text as='span' color='white'>aparelho IP grátis</Text> em pedidos a cima de 5 ramais, promoção <Text as='span' color='white'> limitada até o fim do mês. </Text> Não perca essa oportunidade, faça sua simulação <Text as='span' color='white'>grátis e garanta o seu.</Text></Text>
+            <Text>Realize uma simulação agora! Tenha acesso a um dos sistemas PABX mais completo do Brasil. Aproveite os benefícios ilimitados e ganhe também aparelho IP grátis em pedidos acima de 5 ramais.</Text>
             <Stack my='8px'>
               <Stack direction={{ base: 'column', md: 'row' }}>
                 <ChakraInput placeholder='Nome da empresa *' type='text' onChange={(e) => { setCompanyName(e.target.value) }} />
@@ -100,7 +100,9 @@ export default function Index() {
               </Text>
             </HStack>
 
-            <ButtonChakra type='submit'>Simular meu PABX</ButtonChakra>
+            <Button color='white' type="submit" w='100%' cursor='pointer' bgColor='#ff0000' _hover={{ bgColor: '#c70000', transition: '0.5s' }} transition='0.5s' py='12px' borderRadius='6px' mt='20px' fontWeight='700' fontSize={{ base: '20px', sm: '24px' }}>SIMULAR UM PLANO PABX</Button>
+
+
           </Box>
         </Grid>
 
@@ -176,9 +178,9 @@ export default function Index() {
 
             <Text color='white' mt='20px'>Essas e outras vantagens te aguarda, realize uma simulação agora mesmo.</Text>
 
-          <Link href="/?counter=#form">
-            <ButtonChakra >FAZER SIMULAÇÃO AGORA!</ButtonChakra>
-          </Link>
+            <Link href="/?counter=#form">
+              <ButtonChakra >FAZER SIMULAÇÃO AGORA!</ButtonChakra>
+            </Link>
           </Box>
         </Grid>
       </Box>
@@ -186,7 +188,7 @@ export default function Index() {
       <Flex px='5%' bgColor='#1d253a' justifyContent='center' alignItems='center' flexDirection='column' pb='55px'>
         <Text as='h2' fontSize='55px' color='white' textAlign='center' mt='80px'>MUITO ALEM DE UM SIMPLES CALLCENTER</Text>
 
-        <Grid gridTemplateColumns={{lg:'1fr 1fr', base:'1fr'}} my='40px' columnGap='20px' >
+        <Grid gridTemplateColumns={{ lg: '1fr 1fr', base: '1fr' }} my='40px' columnGap='20px' >
 
           <Flex justifyContent='center' alignItems='center' height='100%'>
             <AspectRatio w='100%' maxW={{ base: '320px', md: '560px' }} h={{ base: '200px', md: '400px' }} ratio={1}>
@@ -198,7 +200,7 @@ export default function Index() {
             </AspectRatio>
           </Flex>
 
-          <Box mt={{base:'40px', lg:'0px'}}>
+          <Box mt={{ base: '40px', lg: '0px' }}>
             <Image src={Install} alt="instalação grátis" />
           </Box>
         </Grid>
