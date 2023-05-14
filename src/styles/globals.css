@@ -1,52 +1,63 @@
-
 @font-face {
   font-family: "steelfish";
   src: url('./../font/steelfish.ttf');
   font-weight: normal;
   font-style: normal;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*{
+* {
   margin: 0px;
   padding: 0px;
 }
 
 
-#bg-img-1{
+#bg-img-1 {
   background-image: url("../img/cap-bg-01.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-#bg-img-2{
-  background-image: url("../img/cap-bg-02.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-#bg-img-3{
+
+#bg-img-2 {
   background-image: url("../img/cap-bg-02.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-h1, h2, h3 {
+#bg-img-3 {
+  background-image: url("../img/cap-bg-02.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+h2,
+h3 {
   font-family: "steelfish", sans-serif;
 }
 
-@media (max-width: 768px){
-
-  
-#bg-img-1{
-  background-image: url("../img/cap-bg-02.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
+#h1 {
+  font-family: "montserrat", sans-serif;
+  color: #1d253a;
 }
 
-#LinkBtn{
+p{
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+
+
+  #bg-img-1 {
+    background-image: url("../img/cap-bg-02.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+#LinkBtn {
   width: 400px;
 }
