@@ -48,7 +48,7 @@ export default function Index() {
 
     e.preventDefault()
     const data = {
-    emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
+    emailTo: ['luana@simcompany.com.br'],
     title: 'Captação de leads por campanha Simcompany',
       domain: 'https://camp.simcompany.com.br/pabx',
       companyName,
