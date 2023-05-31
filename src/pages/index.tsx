@@ -44,13 +44,19 @@ export default function Index() {
   // }, [])
 
 
+    
   async function handleForm(e: FormEvent) {
 
     e.preventDefault()
     const data = {
+<<<<<<< HEAD
       // emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
       emailTo: ['matteus.isaque28@gmail.com'],
       title: 'Captação de leads por campanha Simcompany',
+=======
+    emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br', 'provisorio@simcompany.com.br'],
+    title: 'Captação de leads por campanha Simcompany',
+>>>>>>> c04a34fabe7d97c7ae7278a60a0d03d8ee4703eb
       domain: 'https://camp.simcompany.com.br/pabx',
       companyName,
       name,
