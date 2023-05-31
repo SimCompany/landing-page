@@ -48,7 +48,8 @@ export default function Index() {
 
     e.preventDefault()
     const data = {
-      emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
+      // emailTo: ['luana@simcompany.com.br', 'hubner@simcompany.com.br', 'edgard@simcompany.com.br'],
+      emailTo: ['matteus.isaque28@gmail.com'],
       title: 'Captação de leads por campanha Simcompany',
       domain: 'https://camp.simcompany.com.br/pabx',
       companyName,
@@ -82,15 +83,15 @@ export default function Index() {
             <Text>Realize uma simulação agora! Tenha acesso a um dos sistemas PABX mais completo do Brasil. Aproveite os benefícios ilimitados e ganhe também aparelho IP grátis em pedidos acima de 5 ramais.</Text>
             <Stack my='8px'>
               <Stack direction={{ base: 'column', md: 'row' }}>
-                <ChakraInput placeholder='Nome da empresa *' type='text' onChange={(e) => { setCompanyName(e.target.value) }} />
+                <ChakraInput placeholder='Nome da empresa *' type='text' isRequired onChange={(e) => { setCompanyName(e.target.value) }} />
               </Stack>
               <Stack direction={{ base: 'column', md: 'row' }}>
-                <ChakraInput placeholder='Nome' type='text' onChange={(e) => { setName(e.target.value) }} />
-                <ChakraInput placeholder='Numero' type='text' onChange={(e) => { setNumber(Number(e.target.value)) }} />
+                <ChakraInput placeholder='Nome' type='text' isRequired onChange={(e) => { setName(e.target.value) }} />
+                <ChakraInput placeholder='Numero' type='text' isRequired onChange={(e) => { setNumber(Number(e.target.value)) }} />
               </Stack>
               <Stack direction={{ base: 'column', md: 'row' }}>
-                <ChakraInput placeholder='Quantidade de ramais' type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
-                <ChakraInput placeholder='Email *' type='email' onChange={(e) => { setEmail(e.target.value) }} />
+                <ChakraInput placeholder='Quantidade de ramais' isRequired type='number' onChange={(e) => { setBranches(Number(e.target.value)) }} />
+                <ChakraInput placeholder='Email *' type='email' isRequired onChange={(e) => { setEmail(e.target.value) }} />
               </Stack>
             </Stack>
             <HStack>
