@@ -26,6 +26,7 @@ import ButtonChakra from "../components/button";
 import ChakraInput from "../components/input";
 import TableLine from "../components/tableLine";
 
+
 import phone from "./../img/multiplata.png";
 import TableIMG from "./../img/tabela.png";
 import func from "./../img/funcao-02.png";
@@ -47,7 +48,7 @@ import IP from "./../img/aparelhoip.png";
 
 export default function Index() {
   const [open, setOpen] = useState(false);
-  // const [close, setClose] = useState<any>(false);
+  const [close, setClose] = useState<any>(false);
 
   const [name, setName] = useState<String>();
   const [number, setNumber] = useState<Number>();
